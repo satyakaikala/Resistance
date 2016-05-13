@@ -80,6 +80,20 @@ public class PathOfLeastResistance {
 		return list1;
 	}
 
+	public void removeDoubleForData() {
+		Set<Data> hs = new TreeSet<Data>(new Comparator<Data>() {
+			public int compare(Data d1, Data d2) {
+				if (d1.getPathValues().equalsIgnoreCase(d2.getPathValues())) {
+					return 0;
+				}
+				return 1;
+			}
+		});
+		hs.addAll(data);
+		data.clear();
+		data.addAll(hs);
+	}
+
 	public List<Integer> getNextIValues(int i) {
 		List<Integer> list = new ArrayList<Integer>();
 		if ((i - 1) < 0) {
