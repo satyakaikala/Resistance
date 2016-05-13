@@ -22,6 +22,12 @@ public class Main {
 			array01 = getArrayFromFile("file01.txt");
 			array02 = getArrayFromFile("file02.txt");
 			array03 = getArrayFromFile("file03.txt");
+			PathOfLeastResistance p01 = new PathOfLeastResistance(array01);
+			PathOfLeastResistance p02 = new PathOfLeastResistance(array02);
+			PathOfLeastResistance p03 = new PathOfLeastResistance(array03);
+			datas.add(p01.getLeastResistancePath());
+			datas.add(p02.getLeastResistancePath());
+			datas.add(p03.getLeastResistancePath());
 			datas.forEach((d) -> { // lambda function
 				if (d.getTotalValue() < 50) {
 					lines.add("YES");
